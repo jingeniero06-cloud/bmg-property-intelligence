@@ -899,80 +899,166 @@ table.data-table tr:last-child td {
 }
 
 /* ==========================================================================
-   MODAL COMPONENT
+   UNIVERSAL BULLETPROOF MODAL SYSTEM (.modal-overlay, .modal, .modal-window, .modal-dialog)
+   Guarantees modals are NEVER displayed in-flow and render with luxury blur backdrops.
    ========================================================================== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(11, 18, 32, 0.75);
-  backdrop-filter: blur(6px);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s ease;
+.modal-overlay,
+.modal {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(11, 18, 32, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
-.modal-overlay.active {
-  opacity: 1;
-  visibility: visible;
+
+.modal-overlay.active,
+.modal-overlay.show,
+.modal.active,
+.modal.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
-.modal-window {
-  background: #ffffff;
-  border-radius: 22px;
-  max-width: 740px;
-  width: 100%;
-  max-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow);
-  transform: translateY(24px);
-  transition: transform 0.25s ease;
-  overflow: hidden;
-  border: 1px solid var(--line-dark);
+
+.modal-window,
+.modal-dialog {
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  max-width: 740px !important;
+  width: 100% !important;
+  max-height: 90vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(24px) scale(0.97) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--line-dark) !important;
+  position: relative !important;
+  z-index: 100000 !important;
+  margin: auto !important;
+  box-sizing: border-box !important;
 }
-.modal-overlay.active .modal-window {
-  transform: translateY(0);
+
+.modal-overlay.active .modal-window,
+.modal-overlay.show .modal-window,
+.modal.active .modal-dialog,
+.modal.show .modal-dialog,
+.modal.active .modal-window,
+.modal-overlay.active .modal-dialog {
+  transform: translateY(0) scale(1) !important;
 }
+
 .modal-header {
-  padding: 22px 28px;
-  background: #fcfbfa;
-  border-bottom: 1px solid var(--line-dark);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 22px 28px !important;
+  background: #fbfbfa !important;
+  border-bottom: 1px solid var(--line-dark) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-shrink: 0 !important;
 }
+
 .modal-title {
-  font-size: 1.3rem;
-  color: var(--ink);
-  margin: 0;
+  font-family: var(--serif) !important;
+  font-size: 1.35rem !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
 }
+
 .modal-close {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-  color: var(--muted);
-  line-height: 1;
+  background: none !important;
+  border: none !important;
+  font-size: 1.65rem !important;
+  cursor: pointer !important;
+  color: var(--muted) !important;
+  line-height: 1 !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+  transition: all 0.18s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
+
 .modal-close:hover {
-  color: var(--text);
+  color: var(--ink) !important;
+  background: rgba(0, 0, 0, 0.06) !important;
 }
+
 .modal-body {
-  padding: 28px;
-  overflow-y: auto;
-  font-size: 0.95rem;
+  padding: 26px 28px !important;
+  overflow-y: auto !important;
+  font-size: 0.95rem !important;
+  flex-grow: 1 !important;
+  box-sizing: border-box !important;
+  color: var(--text) !important;
+  line-height: 1.6 !important;
 }
+
+.modal-body input.search-input,
+.modal-body textarea.search-input,
+.modal-body input[type="text"],
+.modal-body input[type="email"],
+.modal-body input[type="tel"],
+.modal-body select,
+.modal-body textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+  border-radius: 8px !important;
+}
+
 .modal-footer {
-  padding: 18px 28px;
-  background: #fcfbfa;
-  border-top: 1px solid var(--line-dark);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
+  padding: 18px 28px !important;
+  background: #fbfbfa !important;
+  border-top: 1px solid var(--line-dark) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay,
+  .modal {
+    padding: 12px !important;
+  }
+  .modal-window,
+  .modal-dialog {
+    max-height: 94vh !important;
+    border-radius: 16px !important;
+  }
+  .modal-header {
+    padding: 16px 20px !important;
+  }
+  .modal-body {
+    padding: 20px !important;
+  }
+  .modal-footer {
+    padding: 14px 20px !important;
+  }
 }
 
 /* Toast */

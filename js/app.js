@@ -1,14 +1,14 @@
-// BMG Property Intelligence - Shared Application Interactions
-// Version 1.0.0
+// BMG Property Intelligence - Application & Interactive UI Engine
+// Version 2.0.0 (Universal Bulletproof Edition)
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
-  initLeadModal();
+  initUniversalModals();
   initActiveNavLink();
 });
 
 // Toast notification helper
-function showToast(message, duration = 3000) {
+function showToast(message, duration = 3500) {
   let toast = document.getElementById('bmgToast');
   if (!toast) {
     toast = document.createElement('div');
@@ -82,42 +82,84 @@ function initActiveNavLink() {
   });
 }
 
-// Free Property Analysis Lead Modal
-function initLeadModal() {
-  const openButtons = document.querySelectorAll('[data-open-lead-modal]');
-  const modal = document.getElementById('leadModal');
-  const closeBtn = document.getElementById('closeLeadModal');
+// Universal Bulletproof Modal Handler
+function initUniversalModals() {
+  // Open buttons
+  const leadOpenButtons = document.querySelectorAll('[data-open-lead-modal]');
+  const genericOpenButtons = document.querySelectorAll('[data-open-modal]');
+  const leadModal = document.getElementById('leadModal');
   const leadForm = document.getElementById('leadCaptureForm');
 
-  if (!modal) return;
-
-  openButtons.forEach(btn => {
+  leadOpenButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
+      if (leadModal) openModal(leadModal);
     });
   });
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
+  genericOpenButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-open-modal');
+      const targetModal = document.getElementById(targetId);
+      if (targetModal) openModal(targetModal);
     });
-  }
+  });
 
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
+  // Universal close buttons across all modals
+  document.querySelectorAll('.modal-close, [data-close-modal]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parentModal = btn.closest('.modal-overlay, .modal');
+      if (parentModal) closeModal(parentModal);
+    });
+  });
+
+  // Universal backdrop click to close
+  document.querySelectorAll('.modal-overlay, .modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  // Universal Escape key listener
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.active, .modal.active').forEach(m => {
+        closeModal(m);
+      });
     }
   });
 
+  // Lead Form Submit Handler
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('leadName')?.value || 'Owner';
       const address = document.getElementById('leadAddress')?.value || '';
-      showToast(`Thank you, ${name}! Your rental market appraisal request for ${address || 'your property'} has been submitted.`);
+      showToast(`Thank you, ${name}! Your valuation analysis request for ${address || 'your property'} has been submitted.`);
       leadForm.reset();
-      modal.classList.remove('active');
+      if (leadModal) closeModal(leadModal);
     });
   }
 }
+
+function openModal(modalEl) {
+  if (!modalEl) return;
+  modalEl.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modalEl) {
+  if (!modalEl) return;
+  modalEl.classList.remove('active');
+  const stillOpen = document.querySelectorAll('.modal-overlay.active, .modal.active');
+  if (stillOpen.length === 0) {
+    document.body.style.overflow = '';
+  }
+}
+
+window.openModal = openModal;
+window.closeModal = closeModal;
