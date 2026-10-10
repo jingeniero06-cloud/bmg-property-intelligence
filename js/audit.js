@@ -1,5 +1,5 @@
 // BMG Forensic SEO Audit & 500-Page Crawl Explorer Engine
-// Version 1.0.0
+// Version 2.0.0 (Northline Luxury Edition)
 
 let currentPage = 1;
 let pageSize = 25;
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initAuditDashboard() {
-  // Bind severity tab filters if present
   const severityBtns = document.querySelectorAll('[data-defect-filter]');
   const defectCards = document.querySelectorAll('.defect-item');
   
@@ -62,7 +61,6 @@ function initTableControls() {
     const sortVal = sortSelect?.value || 'default';
 
     filteredRecords = BMG_AUDIT_RECORDS.filter(r => {
-      // Search text
       if (q) {
         const matchUrl = r.url.toLowerCase().includes(q);
         const matchTitle = (r.title || '').toLowerCase().includes(q);
@@ -70,26 +68,21 @@ function initTableControls() {
         if (!matchUrl && !matchTitle && !matchMeta) return false;
       }
       
-      // Status Code
       if (statusVal !== 'all' && String(r.status) !== statusVal) return false;
 
-      // Content Depth
       if (depthVal === 'thin' && r.words >= 400) return false;
       if (depthVal === 'standard' && (r.words < 400 || r.words > 1500)) return false;
       if (depthVal === 'pillar' && r.words <= 1500) return false;
 
-      // Meta Description
       if (metaVal === 'missing' && r.meta.length > 0) return false;
       if (metaVal === 'short' && (r.meta.length === 0 || r.meta.length >= 120)) return false;
       if (metaVal === 'optimal' && (r.meta.length < 120 || r.meta.length > 160)) return false;
       if (metaVal === 'long' && r.meta.length <= 160) return false;
 
-      // Heading Issues
       if (headingVal === 'missing_h1' && r.h1_count > 0) return false;
       if (headingVal === 'multiple_h1' && r.h1_count <= 1) return false;
       if (headingVal === 'normal_h1' && r.h1_count !== 1) return false;
 
-      // Speed
       if (speedVal === 'fast' && r.time >= 500) return false;
       if (speedVal === 'medium' && (r.time < 500 || r.time > 1000)) return false;
       if (speedVal === 'slow' && r.time <= 1000) return false;
@@ -97,7 +90,6 @@ function initTableControls() {
       return true;
     });
 
-    // Sorting
     if (sortVal === 'fastest') {
       filteredRecords.sort((a, b) => a.time - b.time);
     } else if (sortVal === 'slowest') {
@@ -158,7 +150,7 @@ function renderCrawlTable() {
   if (total === 0) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="7" style="text-align: center; padding: 40px; color: var(--bmg-text-muted);">
+        <td colspan="7" style="text-align: center; padding: 48px; color: var(--muted);">
           <strong>No matching URLs found.</strong><br>Try adjusting your search query or resetting filters.
         </td>
       </tr>
@@ -174,7 +166,6 @@ function renderCrawlTable() {
   const pageItems = filteredRecords.slice(startIdx, endIdx);
 
   tbody.innerHTML = pageItems.map(r => {
-    // Speed badge
     let speedBadge = `<span class="badge badge-pass">${r.time}ms</span>`;
     if (r.time > 1000) {
       speedBadge = `<span class="badge badge-danger">${r.time}ms</span>`;
@@ -182,10 +173,9 @@ function renderCrawlTable() {
       speedBadge = `<span class="badge badge-warning">${r.time}ms</span>`;
     }
 
-    // Title / Meta indicator
     const hasMeta = r.meta && r.meta.length > 0;
     const metaBadge = hasMeta 
-      ? `<span style="color:#64748b; font-size:0.75rem;">${r.meta_len} chars</span>` 
+      ? `<span style="color:var(--muted); font-size:0.75rem;">${r.meta_len} chars</span>` 
       : `<span class="badge badge-danger" style="font-size:0.7rem;">Missing Meta</span>`;
 
     const h1Badge = r.h1_count === 1 
@@ -194,13 +184,13 @@ function renderCrawlTable() {
 
     return `
       <tr>
-        <td style="font-weight: 700; color: #475569; width: 45px;">#${r.id}</td>
+        <td style="font-weight: 700; color: var(--muted); width: 45px;">#${r.id}</td>
         <td>
-          <a href="${r.url}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--bmg-blue); word-break: break-all; display: block; max-width: 420px;">
+          <a href="${r.url}" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--ink); word-break: break-all; display: block; max-width: 440px;">
             ${r.url}
           </a>
-          <div style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
-            ${r.title ? r.title.substring(0, 65) + (r.title.length > 65 ? '...' : '') : '<em style="color:#dc2626;">Missing Title</em>'}
+          <div style="font-size: 0.82rem; color: var(--muted); margin-top: 3px;">
+            ${r.title ? r.title.substring(0, 68) + (r.title.length > 68 ? '...' : '') : '<em style="color:var(--red);">Missing Title</em>'}
           </div>
         </td>
         <td style="white-space: nowrap;">
@@ -208,7 +198,7 @@ function renderCrawlTable() {
         </td>
         <td>${speedBadge}</td>
         <td>
-          <strong>${r.words.toLocaleString()}</strong> words
+          <strong style="color:var(--ink);">${r.words.toLocaleString()}</strong> words
           ${r.words < 400 ? '<span class="badge badge-danger" style="margin-left:4px;">Thin</span>' : ''}
         </td>
         <td>
@@ -218,7 +208,7 @@ function renderCrawlTable() {
           </div>
         </td>
         <td style="text-align: right; white-space: nowrap;">
-          <button class="btn btn-outline btn-sm" onclick="inspectPageDetails(${r.id})">
+          <button class="btn btn-dark btn-sm" onclick="inspectPageDetails(${r.id})">
             Inspect
           </button>
         </td>
@@ -234,23 +224,23 @@ function renderPagination(totalPages, total, startItem, endItem) {
   if (!container) return;
 
   if (totalPages <= 1) {
-    container.innerHTML = `<span style="font-size:0.875rem; color:#64748b;">Showing all ${total} results</span>`;
+    container.innerHTML = `<span style="font-size:0.875rem; color:var(--muted);">Showing all ${total} results</span>`;
     return;
   }
 
   container.innerHTML = `
-    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; margin-top: 16px;">
-      <div style="font-size: 0.875rem; color: #64748b;">
+    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; width: 100%; margin-top: 20px;">
+      <div style="font-size: 0.9rem; color: var(--muted);">
         Showing <strong>${startItem}</strong>-<strong>${endItem}</strong> of <strong>${total}</strong> records
       </div>
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <button class="btn btn-outline btn-sm" ${currentPage === 1 ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage - 1})">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button class="btn btn-dark btn-sm" ${currentPage === 1 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage - 1})">
           ← Prev
         </button>
-        <span style="font-size: 0.875rem; font-weight: 700; color: var(--bmg-primary); padding: 0 8px;">
+        <span style="font-size: 0.88rem; font-weight: 700; color: var(--ink); padding: 0 10px;">
           Page ${currentPage} of ${totalPages}
         </span>
-        <button class="btn btn-outline btn-sm" ${currentPage === totalPages ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage + 1})">
+        <button class="btn btn-dark btn-sm" ${currentPage === totalPages ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''} onclick="changePage(${currentPage + 1})">
           Next →
         </button>
       </div>
@@ -281,58 +271,58 @@ window.inspectPageDetails = function(recordId) {
   if (title) title.textContent = `Technical Forensics: Record #${record.id}`;
 
   body.innerHTML = `
-    <div style="margin-bottom: 20px;">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700;">Full URL</div>
-      <a href="${record.url}" target="_blank" rel="noopener noreferrer" style="font-size: 1.05rem; font-weight: 700; color: var(--bmg-blue); word-break: break-all;">
+    <div style="margin-bottom: 22px;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing: 0.05em;">Target URL</div>
+      <a href="${record.url}" target="_blank" rel="noopener noreferrer" style="font-size: 1.1rem; font-weight: 700; color: var(--ink); word-break: break-all;">
         ${record.url} ↗
       </a>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 24px;">
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-        <span style="font-size: 0.75rem; color: #64748b;">HTTP Status</span>
-        <div style="font-size: 1.1rem; font-weight: 800; color: #065f46;">${record.status} OK</div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px;">
+      <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark);">
+        <span style="font-size: 0.75rem; color: var(--muted); text-transform:uppercase;">HTTP Status</span>
+        <div style="font-size: 1.15rem; font-weight: 800; color: #065f46;">${record.status} OK</div>
       </div>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-        <span style="font-size: 0.75rem; color: #64748b;">Response TTFB</span>
-        <div style="font-size: 1.1rem; font-weight: 800; color: ${record.time > 1000 ? '#dc2626' : (record.time >= 500 ? '#d97706' : '#065f46')};">
+      <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark);">
+        <span style="font-size: 0.75rem; color: var(--muted); text-transform:uppercase;">Response TTFB</span>
+        <div style="font-size: 1.15rem; font-weight: 800; color: ${record.time > 1000 ? 'var(--red)' : (record.time >= 500 ? 'var(--amber)' : '#065f46')};">
           ${record.time} ms
         </div>
       </div>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-        <span style="font-size: 0.75rem; color: #64748b;">Word Count</span>
-        <div style="font-size: 1.1rem; font-weight: 800; color: var(--bmg-primary);">${record.words.toLocaleString()} words</div>
+      <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark);">
+        <span style="font-size: 0.75rem; color: var(--muted); text-transform:uppercase;">Word Count</span>
+        <div style="font-size: 1.15rem; font-weight: 800; color: var(--ink);">${record.words.toLocaleString()} words</div>
       </div>
-      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-        <span style="font-size: 0.75rem; color: #64748b;">Canonical Tag</span>
+      <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark);">
+        <span style="font-size: 0.75rem; color: var(--muted); text-transform:uppercase;">Canonical Tag</span>
         <div style="font-size: 0.85rem; font-weight: 700; color: #065f46;">${record.canonical_status || 'SELF_REFERENTIAL'}</div>
       </div>
     </div>
 
     <div style="margin-bottom: 18px;">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700;">Page Title (${record.title_len} chars)</div>
-      <div style="background: #f8fafc; padding: 10px 14px; border-radius: 6px; border: 1px solid #e2e8f0; font-weight: 600;">
-        ${record.title || '<em style="color:#dc2626;">None</em>'}
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing:0.05em;">Page Title (${record.title_len} chars)</div>
+      <div style="background: var(--paper-2); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--line-dark); font-weight: 600; color:var(--ink);">
+        ${record.title || '<em style="color:var(--red);">None</em>'}
       </div>
     </div>
 
     <div style="margin-bottom: 18px;">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700;">Meta Description (${record.meta_len} chars)</div>
-      <div style="background: #f8fafc; padding: 10px 14px; border-radius: 6px; border: 1px solid #e2e8f0; color: ${record.meta ? '#334155' : '#dc2626'};">
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing:0.05em;">Meta Description (${record.meta_len} chars)</div>
+      <div style="background: var(--paper-2); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--line-dark); color: ${record.meta ? 'var(--text)' : 'var(--red)'};">
         ${record.meta || '<em>Missing meta description tag. Recommended length: 140-160 characters.</em>'}
       </div>
     </div>
 
     <div style="margin-bottom: 18px;">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700;">Heading Hierarchy (${record.h1_count}x H1, ${record.h2_count}x H2)</div>
-      <div style="background: #f8fafc; padding: 10px 14px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.85rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing:0.05em;">Heading Hierarchy (${record.h1_count}x H1, ${record.h2_count}x H2)</div>
+      <div style="background: var(--paper-2); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--line-dark); font-size: 0.88rem;">
         <strong>H1 Tag Content:</strong> ${record.h1 || '<em>No H1 tag detected</em>'}
       </div>
     </div>
 
     <div style="margin-bottom: 18px;">
-      <div style="font-size: 0.75rem; text-transform: uppercase; color: #64748b; font-weight: 700;">Links & Media</div>
-      <div style="display: flex; gap: 16px; font-size: 0.875rem;">
+      <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 700; letter-spacing:0.05em;">Links & Media</div>
+      <div style="display: flex; gap: 20px; font-size: 0.9rem;">
         <div>Internal Outlinks: <strong>${record.internal_outlinks || 0}</strong></div>
         <div>External Outlinks: <strong>${record.external_outlinks || 0}</strong></div>
         <div>Images: <strong>${record.images || 0}</strong></div>
@@ -348,7 +338,6 @@ window.inspectPageDetails = function(recordId) {
   }
 };
 
-// CSV Export
 function exportFilteredCsv() {
   if (!filteredRecords.length) {
     alert('No records to export');
@@ -377,7 +366,6 @@ function exportFilteredCsv() {
   showToast(`Exported ${filteredRecords.length} records to CSV!`);
 }
 
-// JSON Export
 function exportFilteredJson() {
   if (!filteredRecords.length) {
     alert('No records to export');

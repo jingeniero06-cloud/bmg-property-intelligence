@@ -7,13 +7,13 @@
   <meta name="description" content="Full-site 500-page enterprise SEO crawl database, weighted scorecards, Core Web Vitals diagnostics, and schema remediation for baymgmtgroup.com.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="images/BMG-Difference-PropertyManagement.png">
 </head>
 <body>
 
-  <!-- Top Notification Strip -->
+  <!-- Top Announcement Bar -->
   <aside class="top-strip" aria-label="Official Intelligence Announcement">
     <div class="top-strip-inner">
       <div class="top-strip-left">
@@ -21,198 +21,206 @@
         <span>Bay Property Management Group — 500 Production Pages Audited</span>
       </div>
       <div class="top-strip-right">
-        <a href="downloads.html">📥 Download Full Audit PDF</a>
+        <a href="downloads/BMG_Enterprise_SEO_Audit_Report.pdf" download>📥 Download Full Audit PDF (586 KB)</a>
         <a href="index.html">← Back to Overview</a>
       </div>
     </div>
   </aside>
 
-  <!-- Sticky Main Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo" aria-label="Bay Property Management Group Intelligence Home">
-        <div class="brand-shield">B</div>
-        <div class="brand-text">
-          <span class="brand-title">BAY PROPERTY</span>
-          <span class="brand-sub">Management Group • Intelligence</span>
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="Bay Property Management Group Home">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="9" stroke="#c9a35b" stroke-width="1.5"/>
+          <path d="M10 23V9h6a3.5 3.5 0 010 7H10m6 0h2a3.5 3.5 0 010 7h-8" stroke="#e3c48a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <span>Bay Property</span>
+          <span class="sub">Management Group • Intelligence</span>
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="audit.html" class="nav-link active">Forensic Audit</a>
-        <a href="backlinks.html" class="nav-link">Backlinks CRM</a>
-        <a href="blog.html" class="nav-link">2026 Legal Guide</a>
-        <a href="calculators.html" class="nav-link">Compliance Calculators</a>
-        <a href="downloads.html" class="nav-link">Downloads</a>
-      </nav>
+      <button class="menu-btn" aria-label="Open navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
 
-      <div class="header-actions">
-        <button class="btn btn-accent btn-sm" data-open-lead-modal>
-          Get Free Analysis
-        </button>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="audit.html" class="active">Forensic Audit</a></li>
+        <li><a href="backlinks.html">Backlinks CRM</a></li>
+        <li><a href="blog.html">2026 Legal Guide</a></li>
+        <li><a href="calculators.html">Compliance Calculators</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a class="btn btn-gold btn-sm" href="#" data-open-lead-modal>Get Free Analysis</a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <header class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-badge-pill">
-        <span class="pulse-dot"></span>
-        <span>Automated Crawl Engine • Complete XML Sitemap Corpus</span>
-      </div>
-      <h1 class="hero-title">
-        500-Page Forensic SEO Audit &<br><span>Live Crawl Database Explorer</span>
-      </h1>
-      <p class="hero-desc">
-        Deterministic crawl results for <strong>500 production URLs</strong> across Bay Property Management Group. Filter, sort, and inspect response times, metadata lengths, heading hierarchies, canonical integrity, and structured data in real time.
-      </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <span class="dot"></span> Deterministic Crawl Engine • Complete XML Corpus
+        </span>
+        <h1>500-page forensic audit &<br><em>live crawl database</em>.</h1>
+        <p class="lead">
+          We audited every reachable URL on baymgmtgroup.com. Filter, sort, and inspect response times, metadata lengths, heading hierarchies, canonical integrity, and structured data in real time.
+        </p>
 
-      <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-        <a href="#crawlDatabaseSection" class="btn btn-accent btn-lg">
-          🔍 Jump to 500-Page Database
-        </a>
-        <a href="#remediationRoadmap" class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
-          🛠️ View Action Matrix
-        </a>
-        <a href="downloads/BMG_Enterprise_SEO_Audit_Report.pdf" download class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
-          📄 Download Audit PDF (586 KB)
-        </a>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="#crawlDatabaseSection">
+            Explore 500 URLs
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#remediationRoadmap">
+            Action Matrix
+          </a>
+          <a class="btn btn-ghost" href="downloads/BMG_Enterprise_SEO_Audit_Report.pdf" download>
+            Audit PDF (586 KB)
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <div><b>500</b>Pages HTTP 200 OK</div>
+          <div><b>2,013</b>Average words / page</div>
+          <div><b>100%</b>Self-referential canonical</div>
+          <div><b>188</b>Pages TTFB &gt;1s (cache fix)</div>
+        </div>
       </div>
 
-      <!-- Quick Stats -->
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-num highlight">86<small>/100</small></div>
-          <div class="kpi-label">Health Composite</div>
+      <!-- Quick Category Gauges Card -->
+      <div class="card card-dark" style="padding: 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 14px;">
+          <div>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700;">Composite Rating</span>
+            <div style="font-family: var(--serif); font-size: 2.2rem; color: #ffffff; line-height: 1.1;">86 <small style="font-size: 1rem; color: var(--muted-light);">/ 100</small></div>
+          </div>
+          <span class="badge badge-pass" style="font-size: 0.85rem;">Production Authority</span>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-num">100%<small>200 OK</small></div>
-          <div class="kpi-label">HTTP Status Cleanliness</div>
+
+        <div style="font-size: 0.88rem; color: var(--muted-light); line-height: 1.6; margin-bottom: 20px;">
+          The domain demonstrates strong editorial depth and indexation hygiene. Primary ranking unlock requires deploying <strong style="color: #fff;">RealEstateAgent</strong> schema on 5 branch pages and configuring edge caching for 188 origin-dependent URLs.
         </div>
-        <div class="kpi-card">
-          <div class="kpi-num">2,013<small>words</small></div>
-          <div class="kpi-label">Average Word Count</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-num">100%<small>Self-Ref</small></div>
-          <div class="kpi-label">Canonical Health</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-num">188<small>pages</small></div>
-          <div class="kpi-label">TTFB &gt;1s (Cache Fix)</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <a href="#crawlDatabaseSection" class="btn btn-gold btn-sm" style="width: 100%;">Inspect 500 Pages</a>
+          <a href="downloads.html" class="btn btn-ghost btn-sm" style="width: 100%;">Download JSON</a>
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
-  <!-- Main Container -->
-  <main class="main-content">
-
-    <!-- 7 Architecture Dimensions -->
-    <section style="margin-bottom: 60px;">
-      <div class="section-head">
-        <div class="section-tag">Evaluation Framework</div>
-        <h2 class="section-title">7 Architectural Audit Pillars</h2>
+  <!-- 7 Architectural Audit Pillars -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-tag">Evaluation Framework</span>
+        <h2>7 Architectural Audit Pillars</h2>
         <p class="section-desc">Weighted scores computed deterministically from our full-corpus crawler.</p>
       </div>
 
       <div class="grid-3">
         <!-- 1. Technical -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">1. Technical SEO & Crawlability</h3>
-            <span class="badge badge-pass">98 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-pass">22% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">98 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
+          <h3 class="card-title">1. Technical SEO & Crawlability</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
             Flawless indexing health. All 500 URLs returned clean HTTP 200 OK. Zero 404 or 5xx server errors detected. Canonical tags are 100% self-referential with zero redirect loops.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>22%</strong> | Contribution: <strong>21.56 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>21.56 pts</strong> | Status: <span style="color:#065f46; font-weight:700;">Flawless</span>
           </div>
         </div>
 
         <!-- 2. Content Quality -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">2. Content Quality & Depth</h3>
-            <span class="badge badge-pass">91 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-pass">23% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">91 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
+          <h3 class="card-title">2. Content Quality & Depth</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
             Deep topical authority with an exceptional 2,013 average words per page. Zero thin content pages (&lt;400 words) exist in the crawl. High organic rank potential across local terms.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>23%</strong> | Contribution: <strong>20.93 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>20.93 pts</strong> | Status: <span style="color:#065f46; font-weight:700;">Deep Authority</span>
           </div>
         </div>
 
         <!-- 3. On-Page SEO -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">3. On-Page SEO & Metadata</h3>
-            <span class="badge badge-pass">89 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-pass">20% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">89 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
-            Title tags are well formatted. 4 URLs lack explicit meta descriptions, and 3 blog articles feature multiple H1 tags. 1 Norwegian sample post requires deletion.
+          <h3 class="card-title">3. On-Page SEO & Metadata</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
+            Title tags are well formatted. 4 URLs lack explicit meta descriptions, and 3 blog articles feature multiple H1 tags. 1 Norwegian sample post requires immediate 410 deletion.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>20%</strong> | Contribution: <strong>17.80 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>17.80 pts</strong> | Status: <span style="color:#065f46; font-weight:700;">Strong</span>
           </div>
         </div>
 
         <!-- 4. Performance CWV -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">4. Performance & Core Web Vitals</h3>
-            <span class="badge badge-warning">75 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-warning">10% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">75 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
-            312 pages (62.4%) load sub-500ms via Cloudflare edge. 188 pages (37.6%) exceed 1,000ms TTFB due to unprimed PHP executions. Cloudflare HTML caching rule required.
+          <h3 class="card-title">4. Performance & Core Web Vitals</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
+            312 pages (62.4%) load sub-500ms via Cloudflare edge. 188 pages (37.6%) exceed 1,000ms TTFB due to unprimed origin executions. HTML edge-caching rule required.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>10%</strong> | Contribution: <strong>7.50 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>7.50 pts</strong> | Status: <span style="color:#92400e; font-weight:700;">Needs Cache Rule</span>
           </div>
         </div>
 
         <!-- 5. Schema Structured Data -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">5. Schema.org Structured Data</h3>
-            <span class="badge badge-danger">62 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-danger">10% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">62 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
+          <h3 class="card-title">5. Schema.org Structured Data</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
             High-priority ranking gap: While top-level Organization graph exists, regional office branch landing pages lack RealEstateAgent or LocalBusiness structured markup.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>10%</strong> | Contribution: <strong>6.20 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>6.20 pts</strong> | Status: <span style="color:#991b1b; font-weight:700;">High ROI Gap</span>
           </div>
         </div>
 
         <!-- 6. AI Citation GEO -->
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">6. AI Search & Citations (GEO)</h3>
-            <span class="badge badge-warning">60 / 100</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <span class="badge badge-warning">10% Weight</span>
+            <span style="font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-weight: 600;">60 / 100</span>
           </div>
-          <p style="font-size: 0.875rem; color: #475569; margin-bottom: 12px;">
+          <h3 class="card-title">6. AI Search & Citations (GEO)</h3>
+          <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 16px;">
             ChatGPT search visibility is solid. Perplexity AI and Google AI Overviews penalize 6 unsourced numerical claims on the homepage. Missing comprehensive llms-full.txt file.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
-            Weight: <strong>10%</strong> | Contribution: <strong>6.00 pts</strong>
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--line-dark);">
+            Contribution: <strong>6.00 pts</strong> | Status: <span style="color:#92400e; font-weight:700;">Needs Citations</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- LIVE 500-PAGE DATABASE EXPLORER -->
-    <section id="crawlDatabaseSection" style="margin-bottom: 60px;">
-      <div class="section-head">
-        <div class="section-tag">Interactive Database</div>
-        <h2 class="section-title">500-Page Full-Site Crawl Database Explorer</h2>
+  <!-- LIVE 500-PAGE DATABASE EXPLORER SECTION -->
+  <section class="section" id="crawlDatabaseSection" style="background: var(--paper-2); border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark);">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-tag">Interactive Database</span>
+        <h2>500-Page Full-Site Crawl Database Explorer</h2>
         <p class="section-desc">Search, filter, inspect, and export all 500 production URLs crawled on baymgmtgroup.com.</p>
       </div>
 
@@ -273,29 +281,29 @@
           <option value="title_len">Title Length (Longest)</option>
         </select>
 
-        <button id="resetFiltersBtn" class="btn btn-outline btn-sm">
+        <button id="resetFiltersBtn" class="btn btn-dark btn-sm">
           Reset Filters
         </button>
       </div>
 
       <!-- Action & Export Bar -->
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
-        <div id="crawlStatsLabel" style="font-size: 0.9375rem; color: #475569;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+        <div id="crawlStatsLabel" style="font-size: 0.95rem; color: var(--muted); font-weight: 500;">
           Loading crawl database...
         </div>
 
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <label for="pageSizeSelect" style="font-size: 0.8125rem; color: #64748b; font-weight: 700;">Rows:</label>
-          <select id="pageSizeSelect" class="filter-select" style="padding: 6px 10px; font-size: 0.8125rem;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <label for="pageSizeSelect" style="font-size: 0.84rem; color: var(--muted); font-weight: 700;">Rows:</label>
+          <select id="pageSizeSelect" class="filter-select" style="padding: 6px 12px; font-size: 0.84rem;">
             <option value="25">25 per page</option>
             <option value="50">50 per page</option>
             <option value="100">100 per page</option>
           </select>
 
-          <button id="exportCsvBtn" class="btn btn-outline btn-sm">
+          <button id="exportCsvBtn" class="btn btn-gold btn-sm">
             📊 Export CSV
           </button>
-          <button id="exportJsonBtn" class="btn btn-outline btn-sm">
+          <button id="exportJsonBtn" class="btn btn-dark btn-sm">
             📦 Export JSON
           </button>
         </div>
@@ -323,13 +331,15 @@
 
       <!-- Pagination Controls -->
       <div id="paginationControls"></div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Prioritized Remediation Roadmap & Code Snippets -->
-    <section id="remediationRoadmap" style="margin-bottom: 60px;">
-      <div class="section-head">
-        <div class="section-tag">Implementation Matrix</div>
-        <h2 class="section-title">Prioritized Defect Matrix & Code Remediation</h2>
+  <!-- Prioritized Remediation Roadmap & Code Snippets -->
+  <section class="section" id="remediationRoadmap">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="section-tag">Implementation Matrix</span>
+        <h2>Prioritized Defect Matrix & Code Remediation</h2>
         <p class="section-desc">Copy-paste ready solutions to eliminate the specific defects detected during the 500-page crawl.</p>
       </div>
 
@@ -343,44 +353,44 @@
       </div>
 
       <!-- Defect Item 1 (Critical) -->
-      <div class="card defect-item" data-severity="critical" style="margin-bottom: 20px; border-left: 5px solid #dc2626;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+      <div class="card defect-item" data-severity="critical" style="margin-bottom: 24px; border-left: 6px solid var(--red);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
           <div>
             <span class="badge badge-danger">Critical Issue</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-top: 4px;">
+            <h3 style="font-size: 1.3rem; margin-top: 6px;">
               Legacy WordPress Sample Post Indexation (/velkommen-til-bloggen-min/)
             </h3>
           </div>
-          <span style="font-size: 0.8125rem; font-weight: 700; color: #dc2626;">Effort: 5 mins</span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--red);">Effort: 5 mins</span>
         </div>
-        <p style="font-size: 0.9375rem; color: #334155; margin-bottom: 12px;">
+        <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 14px;">
           <strong>Issue:</strong> The URL <code>https://www.baymgmtgroup.com/blog/velkommen-til-bloggen-min/</code> is a default Norwegian WordPress theme placeholder (<em>"Welcome to my blog"</em>). It has no English content, no meta description, and generates a thin/spam content signal in Google's quality evaluator index.
         </p>
-        <div style="background: #1e293b; color: #f8fafc; padding: 14px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px;">
+        <div style="background: var(--ink); color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
           # Nginx / WordPress .htaccess Permanent 410 Gone Remediation:<br>
           Redirect 410 /blog/velkommen-til-bloggen-min/<br>
           # Or in WordPress Admin: Move post to Trash and purge cache immediately.
         </div>
-        <div style="font-size: 0.8125rem; color: #065f46; font-weight: 700;">
+        <div style="font-size: 0.84rem; color: #065f46; font-weight: 700;">
           ✓ Impact: Removes algorithmic spam signal and protects overall blog domain authority.
         </div>
       </div>
 
       <!-- Defect Item 2 (Critical / High) -->
-      <div class="card defect-item" data-severity="critical" style="margin-bottom: 20px; border-left: 5px solid #dc2626;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+      <div class="card defect-item" data-severity="critical" style="margin-bottom: 24px; border-left: 6px solid var(--red);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
           <div>
             <span class="badge badge-danger">Critical Issue</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-top: 4px;">
+            <h3 style="font-size: 1.3rem; margin-top: 6px;">
               Missing RealEstateAgent Schema on 5 Core Regional Branch Hubs
             </h3>
           </div>
-          <span style="font-size: 0.8125rem; font-weight: 700; color: #dc2626;">Effort: 2 hours</span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--red);">Effort: 2 hours</span>
         </div>
-        <p style="font-size: 0.9375rem; color: #334155; margin-bottom: 12px;">
+        <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 14px;">
           <strong>Issue:</strong> Branch landing pages for Philadelphia, Baltimore City, Laurel, and Northern Virginia have generic organization markup but lack precise <code>RealEstateAgent</code> or <code>LocalBusiness</code> schema with NAP (Name, Address, Phone), geo coordinates, and service areas. This limits visibility in Google Local Map Packs.
         </p>
-        <div style="background: #1e293b; color: #f8fafc; padding: 14px; border-radius: 6px; font-family: monospace; font-size: 0.85rem; line-height: 1.5; margin-bottom: 10px; overflow-x: auto;">
+        <div style="background: var(--ink); color: #f8fafc; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 0.86rem; line-height: 1.6; margin-bottom: 12px; overflow-x: auto;">
           &lt;script type="application/ld+json"&gt;<br>
           {<br>
           &nbsp;&nbsp;"@context": "https://schema.org",<br>
@@ -402,54 +412,53 @@
           }<br>
           &lt;/script&gt;
         </div>
-        <div style="font-size: 0.8125rem; color: #065f46; font-weight: 700;">
+        <div style="font-size: 0.84rem; color: #065f46; font-weight: 700;">
           ✓ Impact: Directly lifts Google 3-Pack rankings for "property management Philadelphia" and "property managers Baltimore".
         </div>
       </div>
 
       <!-- Defect Item 3 (High) -->
-      <div class="card defect-item" data-severity="high" style="margin-bottom: 20px; border-left: 5px solid #d97706;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+      <div class="card defect-item" data-severity="high" style="margin-bottom: 24px; border-left: 6px solid var(--amber);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
           <div>
             <span class="badge badge-warning">High Priority</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-top: 4px;">
+            <h3 style="font-size: 1.3rem; margin-top: 6px;">
               Missing Meta Descriptions on 4 Core Pages
             </h3>
           </div>
-          <span style="font-size: 0.8125rem; font-weight: 700; color: #d97706;">Effort: 15 mins</span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--amber);">Effort: 15 mins</span>
         </div>
-        <p style="font-size: 0.9375rem; color: #334155; margin-bottom: 12px;">
+        <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 14px;">
           <strong>Impacted URLs:</strong> <code>/locations/maryland/</code>, <code>/sitemap/</code>, <code>/chelsea-lewis/</code> (leadership bio), and <code>/blog/velkommen-til-bloggen-min/</code>. Search engines are generating dynamic snippets that show low CTR.
         </p>
-        <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.875rem;">
+        <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark); font-size: 0.9rem;">
           <strong>Recommended Fix for /locations/maryland/:</strong><br>
           <em>"Full-service residential property management across Maryland. Discover how Bay Property Management Group manages single-family homes and multi-family rentals in Baltimore, Laurel, and Annapolis."</em> (168 chars)
         </div>
       </div>
 
       <!-- Defect Item 4 (High) -->
-      <div class="card defect-item" data-severity="high" style="margin-bottom: 20px; border-left: 5px solid #d97706;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px;">
+      <div class="card defect-item" data-severity="high" style="margin-bottom: 24px; border-left: 6px solid var(--amber);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px;">
           <div>
             <span class="badge badge-warning">High Priority</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-top: 4px;">
+            <h3 style="font-size: 1.3rem; margin-top: 6px;">
               Edge-Caching Configuration for 188 Slow Dynamic PHP Pages (>1000ms TTFB)
             </h3>
           </div>
-          <span style="font-size: 0.8125rem; font-weight: 700; color: #d97706;">Effort: 30 mins</span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--amber);">Effort: 30 mins</span>
         </div>
-        <p style="font-size: 0.9375rem; color: #334155; margin-bottom: 12px;">
+        <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 14px;">
           <strong>Issue:</strong> While 312 pages load in under 500ms, 188 pages bypass Cloudflare edge cache and invoke origin PHP and MySQL queries, producing response times between 1,000ms and 1,850ms.
         </p>
-        <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.875rem;">
+        <div style="background: var(--paper-2); padding: 14px; border-radius: 8px; border: 1px solid var(--line-dark); font-size: 0.9rem;">
           <strong>Cloudflare Cache Rule Setup:</strong><br>
           Rule Expression: <code>(http.host eq "www.baymgmtgroup.com" and not http.cookie contains "wordpress_logged_in")</code><br>
           Action: <strong>Edge Cache TTL = 7 Days</strong>, Browser TTL = 4 Hours, Cache Level = Cache Everything. Drops 99% of requests below 200ms.
         </div>
       </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- Technical Inspection Modal -->
   <div class="modal-overlay" id="pageDetailModal" role="dialog" aria-modal="true" aria-labelledby="pageDetailTitle">
@@ -462,7 +471,7 @@
         <!-- Rendered by audit.js -->
       </div>
       <div class="modal-footer">
-        <button class="btn btn-primary btn-sm" onclick="document.getElementById('pageDetailModal').classList.remove('active')">
+        <button class="btn btn-dark btn-sm" onclick="document.getElementById('pageDetailModal').classList.remove('active')">
           Close Forensics
         </button>
       </div>
@@ -478,28 +487,28 @@
       </div>
       <form id="leadCaptureForm">
         <div class="modal-body">
-          <p style="color: var(--bmg-text-muted); font-size: 0.9375rem; margin-bottom: 20px;">
+          <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 22px;">
             Submit your rental property details below to receive a certified rental valuation report, vacancy forecast, and management fee breakdown from our regional directors.
           </p>
-          <div style="margin-bottom: 14px;">
-            <label for="leadName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Full Name *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadName" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Full Name *</label>
             <input type="text" id="leadName" required placeholder="e.g. John Doe" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Email Address *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadEmail" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Email Address *</label>
             <input type="email" id="leadEmail" required placeholder="john@example.com" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadPhone" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Phone Number *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadPhone" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Phone Number *</label>
             <input type="tel" id="leadPhone" required placeholder="(443) 555-0123" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadAddress" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Property Address & City *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadAddress" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Property Address & City *</label>
             <input type="text" id="leadAddress" required placeholder="e.g. 1805 Eastern Ave, Baltimore, MD" class="search-input" style="padding-left: 14px;">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-accent" style="width: 100%;">
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
             Send Free Rental Analysis Request
           </button>
         </div>
@@ -510,18 +519,18 @@
   <!-- Toast Notification Container -->
   <div class="toast-msg" id="bmgToast"></div>
 
-  <!-- Professional BMG Footer -->
+  <!-- Luxury Obsidian Footer -->
   <footer class="site-footer">
-    <div class="footer-container">
+    <div class="wrap">
       <div class="footer-bottom">
         <div>
           © 2026 Bay Property Management Group. All rights reserved. Equal Housing Opportunity.
         </div>
         <div>
-          <a href="index.html" style="color: #cbd5e1; margin-right: 14px;">Overview</a>
-          <a href="audit.html" style="color: #cbd5e1; margin-right: 14px;">Forensic Audit</a>
-          <a href="backlinks.html" style="color: #cbd5e1; margin-right: 14px;">Backlinks CRM</a>
-          <a href="downloads.html" style="color: #cbd5e1;">Downloads</a>
+          <a href="index.html" style="color: var(--muted-light); margin-right: 18px;">Overview</a>
+          <a href="audit.html" style="color: var(--gold-2); margin-right: 18px;">Forensic Audit</a>
+          <a href="backlinks.html" style="color: var(--muted-light); margin-right: 18px;">Backlinks CRM</a>
+          <a href="downloads.html" style="color: var(--muted-light);">Downloads</a>
         </div>
       </div>
     </div>

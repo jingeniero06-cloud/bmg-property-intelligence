@@ -7,13 +7,13 @@
   <meta name="description" content="Download official executive deliverables for Bay Property Management Group: Enterprise SEO Audit PDF, Targeted Backlinks Guide PDF, and 2026 Maryland Eviction Guide PDF.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/png" href="images/BMG-Difference-PropertyManagement.png">
 </head>
 <body>
 
-  <!-- Top Notification Strip -->
+  <!-- Top Announcement Bar -->
   <aside class="top-strip" aria-label="Official Intelligence Announcement">
     <div class="top-strip-inner">
       <div class="top-strip-left">
@@ -26,79 +26,83 @@
     </div>
   </aside>
 
-  <!-- Sticky Main Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo" aria-label="Bay Property Management Group Intelligence Home">
-        <div class="brand-shield">B</div>
-        <div class="brand-text">
-          <span class="brand-title">BAY PROPERTY</span>
-          <span class="brand-sub">Management Group • Intelligence</span>
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="logo" href="index.html" aria-label="Bay Property Management Group Home">
+        <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="30" height="30" rx="9" stroke="#c9a35b" stroke-width="1.5"/>
+          <path d="M10 23V9h6a3.5 3.5 0 010 7H10m6 0h2a3.5 3.5 0 010 7h-8" stroke="#e3c48a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <span>Bay Property</span>
+          <span class="sub">Management Group • Intelligence</span>
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-link">Overview</a>
-        <a href="audit.html" class="nav-link">Forensic Audit</a>
-        <a href="backlinks.html" class="nav-link">Backlinks CRM</a>
-        <a href="blog.html" class="nav-link">2026 Legal Guide</a>
-        <a href="calculators.html" class="nav-link">Compliance Calculators</a>
-        <a href="downloads.html" class="nav-link active">Downloads</a>
-      </nav>
+      <button class="menu-btn" aria-label="Open navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
 
-      <div class="header-actions">
-        <button class="btn btn-accent btn-sm" data-open-lead-modal>
-          Get Free Analysis
-        </button>
-        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="audit.html">Forensic Audit</a></li>
+        <li><a href="backlinks.html">Backlinks CRM</a></li>
+        <li><a href="blog.html">2026 Legal Guide</a></li>
+        <li><a href="calculators.html">Compliance Calculators</a></li>
+        <li><a href="downloads.html" class="active">Downloads</a></li>
+        <li><a class="btn btn-gold btn-sm" href="#" data-open-lead-modal>Get Free Analysis</a></li>
+      </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="hero-inner">
-      <div class="hero-badge-pill">
-        <span class="pulse-dot"></span>
-        <span>Document Archive • Headless Chrome Compiled Deliverables</span>
-      </div>
-      <h1 class="hero-title">
-        Executive Deliverables &<br><span>Technical Document Hub</span>
-      </h1>
-      <p class="hero-desc">
-        Instant access to all published whitepapers, forensic SEO audit reports, 100% white-hat outreach prospectuses, and full raw datasets generated for Bay Property Management Group.
-      </p>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <span class="dot"></span> Document Archive • Headless Chrome Compiled Deliverables
+        </span>
+        <h1>Executive deliverables &<br><em>technical document hub</em>.</h1>
+        <p class="lead">
+          Direct access to all published whitepapers, forensic SEO audit reports, 100% white-hat outreach prospectuses, and full raw datasets generated for Bay Property Management Group.
+        </p>
 
-      <!-- Quick Stats -->
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <div class="kpi-num highlight">3<small>PDFs</small></div>
-          <div class="kpi-label">Executive Reports</div>
+        <div class="hero-proof">
+          <div><b>3</b>Executive PDF reports</div>
+          <div><b>2.3 MB</b>Total document archive</div>
+          <div><b>500</b>JSON crawl corpus</div>
+          <div><b>23</b>Outreach workbook targets</div>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-num">2.3<small>MB</small></div>
-          <div class="kpi-label">Total Document Size</div>
+      </div>
+
+      <!-- Quick Guidance Card -->
+      <div class="card card-dark" style="padding: 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--line); padding-bottom: 14px;">
+          <div>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 700;">Deliverables</span>
+            <div style="font-family: var(--serif); font-size: 2rem; color: #ffffff; line-height: 1.1;">Verified Archive</div>
+          </div>
+          <span class="badge badge-pass">3 Reports Live</span>
         </div>
-        <div class="kpi-card">
-          <div class="kpi-num">500<small>Rows</small></div>
-          <div class="kpi-label">JSON Crawl Corpus</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-num">23<small>Targets</small></div>
-          <div class="kpi-label">Excel Outreach Workbook</div>
+
+        <p style="font-size: 0.9rem; color: var(--muted-light); line-height: 1.6; margin-bottom: 20px;">
+          Compiled via headless browser engines with high-resolution vector diagrams, full-site statistical distributions, and comprehensive legal citations.
+        </p>
+
+        <div style="background: rgba(255,255,255,0.05); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--line); font-size: 0.82rem; color: #cbd5e1;">
+          📥 Direct high-speed downloads hosted via GitHub Pages static edge.
         </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- Main Container -->
-  <main class="main-content">
+  <main class="wrap" style="padding: 80px 24px;">
 
-    <div class="section-head">
-      <div class="section-tag">Direct Downloads</div>
-      <h2 class="section-title">Official PDF & Dataset Library</h2>
+    <div class="section-header">
+      <span class="section-tag">Direct Downloads</span>
+      <h2>Official PDF & Dataset Library</h2>
       <p class="section-desc">Click any resource below to download directly to your device or preview online.</p>
     </div>
 
@@ -106,26 +110,26 @@
       <!-- Item 1: SEO Audit PDF -->
       <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="badge badge-pass">PDF Document</span>
-            <span style="font-size: 0.8125rem; font-weight: 700; color: #64748b;">586 KB</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge badge-pass">PDF Report</span>
+            <span style="font-size: 0.84rem; font-weight: 700; color: var(--muted);">586 KB</span>
           </div>
-          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 8px;">
+          <h3 class="card-title" style="margin-bottom: 10px;">
             BMG Enterprise SEO Forensic Audit Report
           </h3>
-          <p style="font-size: 0.9375rem; color: #475569; margin-bottom: 16px;">
+          <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 18px;">
             The complete 500-page crawl diagnostic report with 7 weighted category scorecards, Cloudflare TTFB response distribution, schema markup code snippets, and phased implementation timeline.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 18px;">
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 12px; border-radius: 8px; border: 1px solid var(--line-dark); margin-bottom: 22px;">
             Compiled via Headless Chrome • Includes executive scorecard & visual breakdown.
           </div>
         </div>
 
-        <div style="display: flex; gap: 10px;">
-          <a href="downloads/BMG_Enterprise_SEO_Audit_Report.pdf" download class="btn btn-primary" style="flex: 1;">
+        <div style="display: flex; gap: 12px;">
+          <a href="downloads/BMG_Enterprise_SEO_Audit_Report.pdf" download class="btn btn-gold" style="flex: 1;">
             📥 Download PDF (586 KB)
           </a>
-          <a href="audit.html" class="btn btn-outline" style="flex: 1;">
+          <a href="audit.html" class="btn btn-dark" style="flex: 1;">
             View Online Explorer →
           </a>
         </div>
@@ -134,26 +138,26 @@
       <!-- Item 2: Backlinks Guide PDF -->
       <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="badge badge-warning">PDF Document</span>
-            <span style="font-size: 0.8125rem; font-weight: 700; color: #64748b;">723 KB</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge badge-warning">PDF Prospectus</span>
+            <span style="font-size: 0.84rem; font-weight: 700; color: var(--muted);">723 KB</span>
           </div>
-          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 8px;">
+          <h3 class="card-title" style="margin-bottom: 10px;">
             BMG Targeted Backlinks Outreach Guide
           </h3>
-          <p style="font-size: 0.9375rem; color: #475569; margin-bottom: 16px;">
+          <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 18px;">
             23 high-authority institutional prospects across Baltimore, Philadelphia, Washington D.C., and NOVA. Includes DR ratings, monthly traffic, contact emails, and all 5 tailored pitch scripts.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 18px;">
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 12px; border-radius: 8px; border: 1px solid var(--line-dark); margin-bottom: 22px;">
             100% White-Hat Guarantee • Zero PBNs • Zero Casino / Sponsored Spam.
           </div>
         </div>
 
-        <div style="display: flex; gap: 10px;">
-          <a href="downloads/BMG_Targeted_Backlinks_Outreach_Guide.pdf" download class="btn btn-primary" style="flex: 1;">
+        <div style="display: flex; gap: 12px;">
+          <a href="downloads/BMG_Targeted_Backlinks_Outreach_Guide.pdf" download class="btn btn-gold" style="flex: 1;">
             📥 Download PDF (723 KB)
           </a>
-          <a href="backlinks.html" class="btn btn-outline" style="flex: 1;">
+          <a href="backlinks.html" class="btn btn-dark" style="flex: 1;">
             Launch CRM →
           </a>
         </div>
@@ -162,26 +166,26 @@
       <!-- Item 3: Legal Guide PDF -->
       <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="badge badge-info">PDF Document</span>
-            <span style="font-size: 0.8125rem; font-weight: 700; color: #64748b;">1.00 MB</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge badge-info">PDF Guide</span>
+            <span style="font-size: 0.84rem; font-weight: 700; color: var(--muted);">1.00 MB</span>
           </div>
-          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 8px;">
+          <h3 class="card-title" style="margin-bottom: 10px;">
             2026 Maryland Landlord-Tenant Law & Eviction Guide
           </h3>
-          <p style="font-size: 0.9375rem; color: #475569; margin-bottom: 16px;">
+          <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 18px;">
             Pixel-perfect print of BMG's live Flatsome blog post. 2,259 words covering 10-day notice rules, HB 693 1-month deposit cap, Baltimore City rental licenses, and 2 inline dark-mode SVG charts.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 18px;">
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 12px; border-radius: 8px; border: 1px solid var(--line-dark); margin-bottom: 22px;">
             Author: Patrick Freeze, Managing Partner • High-resolution vector charts embedded.
           </div>
         </div>
 
-        <div style="display: flex; gap: 10px;">
-          <a href="downloads/2026-maryland-landlord-tenant-law-eviction-guide.pdf" download class="btn btn-primary" style="flex: 1;">
+        <div style="display: flex; gap: 12px;">
+          <a href="downloads/2026-maryland-landlord-tenant-law-eviction-guide.pdf" download class="btn btn-gold" style="flex: 1;">
             📥 Download PDF (1.00 MB)
           </a>
-          <a href="blog.html" class="btn btn-outline" style="flex: 1;">
+          <a href="blog.html" class="btn btn-dark" style="flex: 1;">
             Read Web Article →
           </a>
         </div>
@@ -190,26 +194,26 @@
       <!-- Item 4: Raw Datasets (JSON & XLSX) -->
       <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <span class="badge badge-neutral">Raw Datasets</span>
-            <span style="font-size: 0.8125rem; font-weight: 700; color: #64748b;">JSON & XLSX</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <span class="badge badge-pass">Raw Datasets</span>
+            <span style="font-size: 0.84rem; font-weight: 700; color: var(--muted);">JSON & XLSX</span>
           </div>
-          <h3 style="font-size: 1.3rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 8px;">
+          <h3 class="card-title" style="margin-bottom: 10px;">
             Raw Crawl Database & Outreach Excel Workbook
           </h3>
-          <p style="font-size: 0.9375rem; color: #475569; margin-bottom: 16px;">
+          <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 18px;">
             Download the raw structured datasets: the complete 500-page JSON crawl dump with response times and metadata, plus the multi-tab outreach workbook.
           </p>
-          <div style="font-size: 0.8125rem; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 18px;">
+          <div style="font-size: 0.82rem; background: var(--paper-2); padding: 12px; border-radius: 8px; border: 1px solid var(--line-dark); margin-bottom: 22px;">
             Machine-readable JSON schema • Excel spreadsheet with contact matrices.
           </div>
         </div>
 
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="downloads/full_500_audit_results.json" download class="btn btn-outline" style="flex: 1;">
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <a href="downloads/full_500_audit_results.json" download class="btn btn-dark" style="flex: 1;">
             📦 Crawl JSON (554 KB)
           </a>
-          <a href="downloads/BMG_Outreach_Q1_NicheHybrid_v3.xlsx" download class="btn btn-outline" style="flex: 1;">
+          <a href="downloads/BMG_Outreach_Q1_NicheHybrid_v3.xlsx" download class="btn btn-dark" style="flex: 1;">
             📊 Outreach Excel (56 KB)
           </a>
         </div>
@@ -227,28 +231,28 @@
       </div>
       <form id="leadCaptureForm">
         <div class="modal-body">
-          <p style="color: var(--bmg-text-muted); font-size: 0.9375rem; margin-bottom: 20px;">
+          <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 22px;">
             Submit your rental property details below to receive a certified rental valuation report, vacancy forecast, and management fee breakdown from our regional directors.
           </p>
-          <div style="margin-bottom: 14px;">
-            <label for="leadName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Full Name *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadName" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Full Name *</label>
             <input type="text" id="leadName" required placeholder="e.g. John Doe" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Email Address *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadEmail" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Email Address *</label>
             <input type="email" id="leadEmail" required placeholder="john@example.com" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadPhone" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Phone Number *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadPhone" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Phone Number *</label>
             <input type="tel" id="leadPhone" required placeholder="(443) 555-0123" class="search-input" style="padding-left: 14px;">
           </div>
-          <div style="margin-bottom: 14px;">
-            <label for="leadAddress" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Property Address & City *</label>
+          <div style="margin-bottom: 16px;">
+            <label for="leadAddress" style="display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; text-transform: uppercase;">Property Address & City *</label>
             <input type="text" id="leadAddress" required placeholder="e.g. 1805 Eastern Ave, Baltimore, MD" class="search-input" style="padding-left: 14px;">
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-accent" style="width: 100%;">
+          <button type="submit" class="btn btn-gold" style="width: 100%;">
             Send Free Rental Analysis Request
           </button>
         </div>
@@ -259,19 +263,18 @@
   <!-- Toast Notification Container -->
   <div class="toast-msg" id="bmgToast"></div>
 
-  <!-- Professional BMG Footer -->
+  <!-- Luxury Obsidian Footer -->
   <footer class="site-footer">
-    <div class="footer-container">
+    <div class="wrap">
       <div class="footer-bottom">
         <div>
           © 2026 Bay Property Management Group. All rights reserved. Equal Housing Opportunity.
         </div>
         <div>
-          <a href="index.html" style="color: #cbd5e1; margin-right: 14px;">Overview</a>
-          <a href="audit.html" style="color: #cbd5e1; margin-right: 14px;">Forensic Audit</a>
-          <a href="backlinks.html" style="color: #cbd5e1; margin-right: 14px;">Backlinks CRM</a>
-          <a href="blog.html" style="color: #cbd5e1; margin-right: 14px;">2026 Legal Guide</a>
-          <a href="downloads.html" style="color: #cbd5e1;">Downloads</a>
+          <a href="index.html" style="color: var(--muted-light); margin-right: 18px;">Overview</a>
+          <a href="audit.html" style="color: var(--muted-light); margin-right: 18px;">Forensic Audit</a>
+          <a href="backlinks.html" style="color: var(--muted-light); margin-right: 18px;">Backlinks CRM</a>
+          <a href="downloads.html" style="color: var(--gold-2);">Downloads</a>
         </div>
       </div>
     </div>
