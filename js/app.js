@@ -57,12 +57,12 @@ function fallbackCopyText(text, successMsg) {
 
 // Mobile navigation toggle
 function initMobileNav() {
-  const toggleBtn = document.querySelector('.mobile-nav-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  if (toggleBtn && mainNav) {
+  const toggleBtn = document.querySelector('.menu-btn, .mobile-nav-toggle');
+  const navLinks = document.querySelector('.nav-links, .main-nav');
+  if (toggleBtn && navLinks) {
     toggleBtn.addEventListener('click', () => {
-      mainNav.classList.toggle('mobile-active');
-      const isExpanded = mainNav.classList.contains('mobile-active');
+      navLinks.classList.toggle('mobile-active');
+      const isExpanded = navLinks.classList.contains('mobile-active');
       toggleBtn.setAttribute('aria-expanded', isExpanded);
     });
   }
@@ -72,13 +72,12 @@ function initMobileNav() {
 function initActiveNavLink() {
   const path = window.location.pathname;
   const page = path.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-links a:not(.btn), .nav-link:not(.btn)');
+  if (!navLinks.length) return;
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href === page || (page === '' && href === 'index.html')) {
+    if (href === page || (page === '' && href === 'index.html') || (page === '/' && href === 'index.html')) {
       link.classList.add('active');
-    } else {
-      link.classList.remove('active');
     }
   });
 }
