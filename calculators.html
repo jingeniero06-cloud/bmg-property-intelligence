@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maryland Landlord Compliance & Eviction Timeline Calculators | BMG Property Intelligence</title>
+  <meta name="description" content="Interactive Maryland landlord compliance tools: 10-day eviction notice timeline calculator, HB 693 1-month security deposit validator, and landlord management ROI estimator.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="images/BMG-Difference-PropertyManagement.png">
+  <style>
+    .calc-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--bmg-primary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--bmg-border-dark);
+      border-radius: var(--radius-sm);
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: var(--bmg-text);
+      transition: var(--transition);
+      background: #ffffff;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--bmg-blue);
+      box-shadow: 0 0 0 3px rgba(16,120,190,0.15);
+    }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--bmg-border);
+      font-size: 0.9375rem;
+    }
+    .result-row:last-child {
+      border-bottom: none;
+    }
+    .result-value {
+      font-weight: 800;
+      color: var(--bmg-primary);
+      text-align: right;
+    }
+    @media (max-width: 900px) {
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Notification Strip -->
+  <aside class="top-strip" aria-label="Official Intelligence Announcement">
+    <div class="top-strip-inner">
+      <div class="top-strip-left">
+        <span class="top-strip-badge">Statutory Tools</span>
+        <span>Maryland Real Property § 8-401 & 2024 HB 693 Compliance Engine</span>
+      </div>
+      <div class="top-strip-right">
+        <a href="blog.html">📖 Read Full Legal Guide</a>
+        <a href="index.html">← Back to Overview</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Bay Property Management Group Intelligence Home">
+        <div class="brand-shield">B</div>
+        <div class="brand-text">
+          <span class="brand-title">BAY PROPERTY</span>
+          <span class="brand-sub">Management Group • Intelligence</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Overview</a>
+        <a href="audit.html" class="nav-link">Forensic Audit</a>
+        <a href="backlinks.html" class="nav-link">Backlinks CRM</a>
+        <a href="blog.html" class="nav-link">2026 Legal Guide</a>
+        <a href="calculators.html" class="nav-link active">Compliance Calculators</a>
+        <a href="downloads.html" class="nav-link">Downloads</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-accent btn-sm" data-open-lead-modal>
+          Get Free Analysis
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge-pill">
+        <span class="pulse-dot"></span>
+        <span>Real-Time Statutory Legal Math • Updated for 2026 Compliance</span>
+      </div>
+      <h1 class="hero-title">
+        Maryland Landlord Compliance &<br><span>Eviction Timeline Calculators</span>
+      </h1>
+      <p class="hero-desc">
+        Calculate critical statutory deadlines under Maryland Real Property Article § 8-401 (10-Day Notice to Vacate), audit security deposit compliance under 2024 HB 693, and estimate management ROI in seconds.
+      </p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+        <a href="#calc1Section" class="btn btn-accent btn-lg">
+          ⏱️ 10-Day Eviction Calculator
+        </a>
+        <a href="#calc2Section" class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+          💵 Security Deposit Validator
+        </a>
+        <a href="#calc3Section" class="btn btn-outline btn-lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+          📈 Landlord ROI Estimator
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-num highlight">10<small>Days</small></div>
+          <div class="kpi-label">Mandatory Pre-Filing Notice</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">1.0x<small>Rent</small></div>
+          <div class="kpi-label">HB 693 Maximum Deposit Cap</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">45<small>Days</small></div>
+          <div class="kpi-label">Itemized Deposit Return Deadline</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-num">60<small>Days</small></div>
+          <div class="kpi-label">Warrant Restitution Expiry</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- CALCULATOR 1: 10-DAY EVICTION NOTICE TIMELINE -->
+    <section id="calc1Section" style="margin-bottom: 70px;">
+      <div class="section-head">
+        <div class="section-tag">Maryland Real Property § 8-401</div>
+        <h2 class="section-title">1. Maryland 10-Day Eviction Notice & Timeline Calculator</h2>
+        <p class="section-desc">
+          Maryland law requires landlords to deliver a formal 10-day notice to vacate before filing a Failure to Pay Rent complaint (Form DC-CV-082) in District Court. Calculate your exact statutory dates below.
+        </p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Input Form Card -->
+        <div class="card">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 18px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Input Tenancy & Notice Parameters
+          </h3>
+
+          <div class="form-group">
+            <label for="calcNoticeDate" class="form-label">Date 10-Day Notice Served *</label>
+            <input type="date" id="calcNoticeDate" class="form-control">
+            <small style="color: #64748b; font-size: 0.75rem;">Day the written notice was officially delivered to tenant.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="calcRentDueDate" class="form-label">Unpaid Rent Due Date</label>
+            <input type="date" id="calcRentDueDate" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="calcServiceMethod" class="form-label">Notice Delivery Method</label>
+            <select id="calcServiceMethod" class="form-control">
+              <option value="in_person">Hand-Delivered / Affixed to Front Door</option>
+              <option value="certified_mail">Certified Mail (adds 3 postal transit days)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="calcJurisdiction" class="form-label">Maryland County / Jurisdiction *</label>
+            <select id="calcJurisdiction" class="form-control">
+              <option value="baltimore_city">Baltimore City (Strict DHCD & Lead Cert)</option>
+              <option value="baltimore_county">Baltimore County</option>
+              <option value="montgomery">Montgomery County (DHCA Licensing)</option>
+              <option value="prince_georges">Prince George's County</option>
+              <option value="anne_arundel">Anne Arundel County</option>
+              <option value="other_md">Other Maryland County</option>
+            </select>
+          </div>
+
+          <button id="runEvictionCalc" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            Calculate Eviction Deadlines
+          </button>
+        </div>
+
+        <!-- Output Results Card -->
+        <div class="card" id="evictionCalcResults" style="background: #ffffff; border-top: 4px solid var(--bmg-blue);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 14px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Statutory Timeline Results
+          </h3>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">10-Day Notice Expiration:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Tenant has until 11:59 PM on this date to cure</div>
+            </div>
+            <div class="result-value" id="resNoticeExpiry">Calculating...</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">First District Court Filing Date:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Earliest date to submit Form DC-CV-082</div>
+            </div>
+            <div class="result-value" id="resFilingDate" style="color: #065f46;">Calculating...</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Estimated District Court Trial:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Courts typically schedule within 5-10 business days</div>
+            </div>
+            <div class="result-value" id="resTrialDate">Calculating...</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Warrant of Restitution Expiry:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Must be executed within 60 days of judgment</div>
+            </div>
+            <div class="result-value" id="resWarrantDeadline" style="color: #dc2626;">Calculating...</div>
+          </div>
+
+          <!-- Pay and Stay Rule -->
+          <div style="background: #f8fafc; padding: 12px; border-radius: 6px; border: 1px solid #e2e8f0; margin: 16px 0; font-size: 0.8125rem;">
+            <strong style="color: var(--bmg-primary);">Right of Redemption (Pay-and-Stay):</strong>
+            <p id="resRedemptionText" style="margin-top: 4px; color: #475569;">Calculating rule...</p>
+          </div>
+
+          <!-- Local alert box -->
+          <div id="resJurisdictionNotice"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR 2: SECURITY DEPOSIT CAP & INTEREST -->
+    <section id="calc2Section" style="margin-bottom: 70px;">
+      <div class="section-head">
+        <div class="section-tag">2024 HB 693 & Real Property § 8-203</div>
+        <h2 class="section-title">2. Maryland Security Deposit Statutory Cap & Interest Validator</h2>
+        <p class="section-desc">
+          Maryland House Bill 693 permanently capped security deposits at exactly <strong>1 month's rent</strong>. Use this validator to detect illegal overcharges, calculate statutory simple escrow interest, and track your 45-day return deadline.
+        </p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Input Form Card -->
+        <div class="card">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 18px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Input Deposit & Lease Parameters
+          </h3>
+
+          <div class="form-group">
+            <label for="calcMonthlyRent" class="form-label">Monthly Rental Rate ($) *</label>
+            <input type="number" id="calcMonthlyRent" class="form-control" value="2200" step="50">
+          </div>
+
+          <div class="form-group">
+            <label for="calcDepositCollected" class="form-label">Security Deposit Collected ($) *</label>
+            <input type="number" id="calcDepositCollected" class="form-control" value="2200" step="50">
+            <small style="color: #64748b; font-size: 0.75rem;">Total deposit amount received from tenant.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="calcLeaseStart" class="form-label">Lease Commencement Date</label>
+            <input type="date" id="calcLeaseStart" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="calcLeaseEnd" class="form-label">Lease Termination / Vacate Date</label>
+            <input type="date" id="calcLeaseEnd" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="calcEscrowRate" class="form-label">Statutory Simple Escrow Rate (%/yr)</label>
+            <input type="number" id="calcEscrowRate" class="form-control" value="1.50" step="0.1">
+            <small style="color: #64748b; font-size: 0.75rem;">Maryland DHCD published yield rate.</small>
+          </div>
+
+          <button id="runDepositCalc" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            Validate Deposit Compliance
+          </button>
+        </div>
+
+        <!-- Output Results Card -->
+        <div class="card" id="depositCalcResults" style="background: #ffffff; border-top: 4px solid var(--bmg-accent);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 14px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Compliance & Return Audit
+          </h3>
+
+          <!-- Cap Status Banner -->
+          <div id="resCapStatus" style="margin-bottom: 16px;"></div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Maximum Permissible Cap (HB 693):</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Strictly equal to 1 month's agreed rent</div>
+            </div>
+            <div class="result-value" id="resMaxCap">$2,200.00</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Accrued Simple Escrow Interest:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Required for tenancies &gt;6 months and deposits &gt;$50</div>
+            </div>
+            <div class="result-value" id="resAccruedInterest" style="color: var(--bmg-blue);">$0.00</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Total Principal + Interest Due:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Gross deposit before lawful itemized deductions</div>
+            </div>
+            <div class="result-value" id="resTotalDue" style="font-size: 1.15rem;">$2,200.00</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">45-Day Statutory Return Deadline:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Must send via certified mail with itemized list</div>
+            </div>
+            <div class="result-value" id="resReturnDeadline" style="color: #dc2626;">Calculating...</div>
+          </div>
+
+          <div id="resDaysRemaining" style="margin-top: 14px; font-size: 0.875rem; background: #f8fafc; padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0;"></div>
+
+          <div id="resPenaltyBox" style="display: none; margin-top: 14px; background: #fee2e2; border: 1px solid #fecaca; border-radius: 6px; padding: 12px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALCULATOR 3: SELF-MANAGEMENT VS. BMG ROI -->
+    <section id="calc3Section" style="margin-bottom: 70px;">
+      <div class="section-head">
+        <div class="section-tag">Financial Optimization</div>
+        <h2 class="section-title">3. Self-Management vs. BMG Professional Management ROI</h2>
+        <p class="section-desc">
+          Compare the real costs of self-management (vacancy delays, maintenance headaches, legal risks) against Bay Property Management Group's 21-day average turnover and 99.8% collection rate.
+        </p>
+      </div>
+
+      <div class="calc-container">
+        <!-- Input Form Card -->
+        <div class="card">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 18px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Portfolio Parameters
+          </h3>
+
+          <div class="form-group">
+            <label for="roiRent" class="form-label">Monthly Rent Per Unit ($)</label>
+            <input type="number" id="roiRent" class="form-control" value="2200" step="100">
+          </div>
+
+          <div class="form-group">
+            <label for="roiUnits" class="form-label">Number of Rental Units</label>
+            <input type="number" id="roiUnits" class="form-control" value="1" min="1" max="50">
+          </div>
+
+          <div class="form-group">
+            <label for="roiVacancyDays" class="form-label">Self-Managed Days Vacant (Turnover)</label>
+            <input type="number" id="roiVacancyDays" class="form-control" value="45" step="5">
+            <small style="color: #64748b; font-size: 0.75rem;">National self-managed average is 45-60 days. BMG average is 21 days.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="roiHours" class="form-label">Hours Spent Managing / Month</label>
+            <input type="number" id="roiHours" class="form-control" value="8" step="1">
+            <small style="color: #64748b; font-size: 0.75rem;">Time spent coordinating maintenance, collecting rent, screening.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="roiHourlyRate" class="form-label">Your Value of Time ($/Hour)</label>
+            <input type="number" id="roiHourlyRate" class="form-control" value="65" step="10">
+          </div>
+        </div>
+
+        <!-- Output Results Card -->
+        <div class="card" style="background: #ffffff; border-top: 4px solid var(--bmg-primary);">
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--bmg-primary); margin-bottom: 14px; border-bottom: 2px solid var(--bmg-border); padding-bottom: 10px;">
+            Annual Financial Comparison
+          </h3>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">Gross Annual Scheduled Rent:</span>
+            </div>
+            <div class="result-value" id="roiGrossRent">$26,400</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #065f46;">Vacancy Reduction Savings (BMG):</span>
+              <div style="font-size: 0.75rem; color: #64748b;">21-day leasing vs self-managed vacancy</div>
+            </div>
+            <div class="result-value" id="roiVacancySavings" style="color: #065f46;">+$1,733</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #065f46;">Owner Time Reclaimed Value:</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Saved hours redirected to career or family</div>
+            </div>
+            <div class="result-value" id="roiTimeSavings" style="color: #065f46;">+$6,240</div>
+          </div>
+
+          <div class="result-row">
+            <div>
+              <span style="font-weight: 700; color: #334155;">BMG Full Management Fee (8%):</span>
+              <div style="font-size: 0.75rem; color: #64748b;">Covers 24/7 maintenance, portal, screening</div>
+            </div>
+            <div class="result-value" id="roiBmgFee" style="color: #dc2626;">-$2,112</div>
+          </div>
+
+          <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 18px; margin-top: 18px;">
+            <div style="font-size: 0.8125rem; text-transform: uppercase; font-weight: 800; color: #1e40af; margin-bottom: 4px;">
+              Net Landlord Annual Advantage
+            </div>
+            <div id="roiNetBenefit" style="font-size: 1.8rem; font-weight: 900;">
+              Calculating...
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 20px;">
+            <button class="btn btn-accent" style="width: 100%;" data-open-lead-modal>
+              Get Free Custom Rental Analysis for Your Property
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lead Capture Modal -->
+  <div class="modal-overlay" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 class="modal-title" id="leadModalTitle">Free Rental Price & Market Analysis</h3>
+        <button class="modal-close" id="closeLeadModal" aria-label="Close Modal">&times;</button>
+      </div>
+      <form id="leadCaptureForm">
+        <div class="modal-body">
+          <p style="color: var(--bmg-text-muted); font-size: 0.9375rem; margin-bottom: 20px;">
+            Submit your rental property details below to receive a certified rental valuation report, vacancy forecast, and management fee breakdown from our regional directors.
+          </p>
+          <div style="margin-bottom: 14px;">
+            <label for="leadName" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Full Name *</label>
+            <input type="text" id="leadName" required placeholder="e.g. John Doe" class="search-input" style="padding-left: 14px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label for="leadEmail" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Email Address *</label>
+            <input type="email" id="leadEmail" required placeholder="john@example.com" class="search-input" style="padding-left: 14px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label for="leadPhone" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Phone Number *</label>
+            <input type="tel" id="leadPhone" required placeholder="(443) 555-0123" class="search-input" style="padding-left: 14px;">
+          </div>
+          <div style="margin-bottom: 14px;">
+            <label for="leadAddress" style="display: block; font-size: 0.8125rem; font-weight: 700; color: var(--bmg-primary); margin-bottom: 4px;">Property Address & City *</label>
+            <input type="text" id="leadAddress" required placeholder="e.g. 1805 Eastern Ave, Baltimore, MD" class="search-input" style="padding-left: 14px;">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-accent" style="width: 100%;">
+            Send Free Rental Analysis Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-msg" id="bmgToast"></div>
+
+  <!-- Professional BMG Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-bottom">
+        <div>
+          © 2026 Bay Property Management Group. All rights reserved. Equal Housing Opportunity.
+        </div>
+        <div>
+          <a href="index.html" style="color: #cbd5e1; margin-right: 14px;">Overview</a>
+          <a href="audit.html" style="color: #cbd5e1; margin-right: 14px;">Forensic Audit</a>
+          <a href="backlinks.html" style="color: #cbd5e1; margin-right: 14px;">Backlinks CRM</a>
+          <a href="blog.html" style="color: #cbd5e1; margin-right: 14px;">2026 Legal Guide</a>
+          <a href="downloads.html" style="color: #cbd5e1;">Downloads</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/calculators.js"></script>
+</body>
+</html>
